@@ -241,6 +241,10 @@
         if (this.map){ this.map.setCenter(latLng); }
         if (this.marker){ this.marker.setPosition(latLng); }
       }
+
+      if (location instanceof Function) {
+        location.call(this);
+      }
     },
 
     // Look up a given address. If no `address` was specified it uses
